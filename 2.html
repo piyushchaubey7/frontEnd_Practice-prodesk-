@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mountain Landing Page with Slides</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .main-content {
+      text-align: center;
+      padding: 100px 20px 50px;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .main-content h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .main-content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .main-content p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    .main-content button {
+      background-color: #4e8cff;
+      border: none;
+      padding: 15px 30px;
+      color: white;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .main-content button:hover {
+      background-color: #326fd1;
+    }
+
+    .radio-buttons {
+      margin-top: 30px;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    label.slide-dot {
+      height: 14px;
+      width: 14px;
+      margin: 0 6px;
+      background-color: white;
+      opacity: 0.4;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    input[type="radio"]:checked + label {
+      opacity: 1;
+      background-color: white;
+    }
+
+    footer {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <section class="main-content">
+    <h3>Startup 3</h3>
+    <h1>Forget About Code</h1>
+    <p>
+      Startup Framework gives you complete freedom over your creative process —
+      you don’t have to think about any technical aspects. There are no limits
+      and absolutely no coding.
+    </p>
+    <button>Create an Account</button>
+
+    <div class="radio-buttons">
+      <input type="radio" id="slide1" name="slider" checked>
+      <label for="slide1" class="slide-dot"></label>
+      <input type="radio" id="slide2" name="slider">
+      <label for="slide2" class="slide-dot"></label>
+      <input type="radio" id="slide3" name="slider">
+      <label for="slide3" class="slide-dot"></label>
+      <input type="radio" id="slide4" name="slider">
+      <label for="slide4" class="slide-dot"></label>
+    </div>
+  </section>
+
+  <footer>
+    Made by Piyush Chaubey
+  </footer>
+
+</body>
+</html>

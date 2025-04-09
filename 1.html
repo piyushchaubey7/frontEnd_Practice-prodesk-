@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signup/Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1;
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .left {
+      width: 50%;
+    }
+
+    .left h1 {
+      font-size: 2rem;
+      line-height: 1.5;
+    }
+
+    .left h1 span {
+      color: cyan;
+    }
+
+    .left p {
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: lightgray;
+      max-width: 400px;
+    }
+
+    .right {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-container {
+      background: white;
+      color: black;
+      border-radius: 10px;
+      padding: 30px;
+      width: 100%;
+      max-width: 350px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      background: none;
+      border: none;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      padding-bottom: 5px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tab.active {
+      border-color: deepskyblue;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form input {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid gray;
+    }
+
+    .btn-green {
+      background: mediumseagreen;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-blue {
+      background: dodgerblue;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .or {
+      text-align: center;
+      margin: 10px 0;
+      color: gray;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .left, .right {
+        width: 100%;
+        text-align: center;
+      }
+
+      .left h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>We solve digital<br>problems with an<br><span>outstanding<br>creative flare</span></h1>
+      <p>We have created a new product that will help designers, developers and companies create websites for their startups quickly and easily.</p>
+    </div>
+
+    <div class="right">
+      <div class="form-container">
+        <div class="tabs">
+          <button class="tab active" onclick="switchTab('signup')">SIGN UP</button>
+          <button class="tab" onclick="switchTab('login')">LOGIN</button>
+        </div>
+
+        <div id="signup-form" class="form">
+          <input type="email" placeholder="Your email" />
+          <input type="password" placeholder="Your password" />
+          <button class="btn-green">Create an Account</button>
+          <div class="or">or</div>
+          <button class="btn-blue">Login via Twitter</button>
+        </div>
+
+        <div id="login-form" class="form hidden">
+          <input type="email" placeholder="Your email" />
+          <input type="password" placeholder="Your password" />
+          <button class="btn-green">Log In</button>
+          <div class="or">or</div>
+          <button class="btn-blue">Login via Twitter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Made by Piyush Chaubey
+  </footer>
+
+  <script>
+    function switchTab(tab) {
+      const signupForm = document.getElementById("signup-form");
+      const loginForm = document.getElementById("login-form");
+      const tabs = document.querySelectorAll(".tab");
+
+      if (tab === "signup") {
+        signupForm.classList.remove("hidden");
+        loginForm.classList.add("hidden");
+        tabs[0].classList.add("active");
+        tabs[1].classList.remove("active");
+      } else {
+        signupForm.classList.add("hidden");
+        loginForm.classList.remove("hidden");
+        tabs[1].classList.add("active");
+        tabs[0].classList.remove("active");
+      }
+    }
+  </script>
+</body>
+</html>
